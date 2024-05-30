@@ -10,6 +10,8 @@ function hasPairWithSum(arr, sum) {
   return false
 }
 
+console.log(hasPairWithSum([6, 4, 3, 2, 1, 7], 9))
+
 // Better
 function hasPairWithSum2(arr, sum) {
   const mySet = new Set()
