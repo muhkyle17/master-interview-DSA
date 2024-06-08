@@ -1,7 +1,7 @@
 const strings = ['a', 'b', 'c', 'd']
 // 4 * 4 = 16 bytes of storage
 
-console.log(strings[2])
+strings[2] // O(1)
 
 // push -- Add an item at the end of the array
 strings.push('e') // O(1)
