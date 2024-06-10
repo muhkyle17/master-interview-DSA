@@ -1,5 +1,14 @@
 function mergeSortedArrays(array1, array2) {
   const mergedArray = []
+
+  // Check input
+  if (array1.length === 0) {
+    return array2
+  }
+  if (array2.length === 0) {
+    return array1
+  }
+
   for (let i = 0; i < array1.length; i++) {
     mergedArray.push(array1[i])
   }
