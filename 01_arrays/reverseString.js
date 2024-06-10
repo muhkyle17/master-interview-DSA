@@ -20,3 +20,9 @@ function reverse(str) {
 
 const reversedString = reverse('Hi My name is Andrei')
 console.log(reversedString, 'reversedString')
+
+function reverse2(str) {
+  return str.split('').reverse().join('')
+}
+const reversedString2 = reverse2('Hi My name is Andrei')
+console.log(reversedString2, 'reversedString2')
