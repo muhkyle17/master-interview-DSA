@@ -26,3 +26,9 @@ function reverse2(str) {
 }
 const reversedString2 = reverse2('Hi My name is Andrei')
 console.log(reversedString2, 'reversedString2')
+
+const reverse3 = str => str.split('').reverse().join('')
+console.log(reverse3('Hi My name is Andrei'), 'reverse3')
+
+const reverse4 = str => [...str].reverse().join('')
+console.log(reverse4('Hi My name is Andrei'), 'reverse4')
