@@ -43,7 +43,7 @@ const object4 = {
 // - when you make a copy of an object and reuse the code -- you're making multiple copies of an object
 class Player {
   constructor(name, type) {
-    console.log(this, 'this')
+    console.log(this, 'player')
     this.name = name
     this.type = type
     console.log(this.name, 'this.name')
@@ -60,6 +60,7 @@ class Wizard extends Player {
     // Whenever you extend another class, you have to use the 'super' and pass in the values that the other class takes in
     // This is so that you have access to the player's classes as well
     super(name, type)
+    console.log(this, 'wizard')
   }
   play() {
     console.log(`WEEEE I'm a ${this.type}`)
