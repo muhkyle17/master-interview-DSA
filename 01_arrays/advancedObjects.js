@@ -28,5 +28,15 @@ console.log(this)
 console.log(this === window) // returns true
 // this refers to what object it's inside of
 
-//////////////////////////
+function a() {
+  console.log(this)
+}
+a()
+
+const object4 = {
+  a: function () {
+    console.log(this)
+  },
+}
+
 // instantiation
