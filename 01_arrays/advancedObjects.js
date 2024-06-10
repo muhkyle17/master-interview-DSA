@@ -40,3 +40,16 @@ const object4 = {
 }
 
 // instantiation
+// - when you make a copy of an object and reuse the code -- you're making multiple copies of an object
+class Player {
+  constructor(name, type) {
+    this.name = name
+    this.type = type
+    console.log(this.name)
+    console.log(this.type)
+  }
+
+  introduce() {
+    console.log(`Hi I am ${this.name}, I'm a ${this.type}`)
+  }
+}
