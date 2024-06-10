@@ -23,8 +23,24 @@ function mergeSortedArrays(array1, array2) {
 const sortedArray = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]) // [0, 3, 4, 4, 6, 30, 31];
 console.log(sortedArray, 'sortedArray')
 
+function mergedSortedArrays2(array1, array2) {
+  // Check input
+  if (array1.length === 0) {
+    return array2
+  }
+  if (array2.length === 0) {
+    return array1
+  }
+
+  let mergedArray = [...array1, ...array2]
+  return mergedArray.sort((a, b) => a - b)
+}
+
+const sortedArray2 = mergeSortedArrays2([0, 3, 4, 31], [4, 6, 30])
+console.log(sortedArray2, 'sortedArray2')
+
 // Tutorial solution
-function mergeSortedArrays2(array1, array2) {
+function mergeSortedArrays3(array1, array2) {
   const mergedArray = []
   let array1Item = array1[0]
   let array2Item = array2[0]
@@ -55,5 +71,5 @@ function mergeSortedArrays2(array1, array2) {
   return mergedArray
 }
 
-const sortedArray2 = mergeSortedArrays2([0, 3, 4, 31], [4, 6, 30])
-console.log(sortedArray2, 'sortedArray2')
+const sortedArray3 = mergeSortedArrays3([0, 3, 4, 31], [4, 6, 30])
+console.log(sortedArray3, 'sortedArray3')
