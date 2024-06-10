@@ -16,5 +16,17 @@ object3.value // 10
 // [] === []
 // returns false because an array is essentially a data structure or an object so the first array is a new array being created while the second array is a new array being created as well
 
-// context
+//////////////////////////
+// context vs. scope
+function b() {
+  let a = 4
+}
+console.log(a, 'a') // returns a is not defined because a is only within the scope of function b
+
+// context tells you where you where we are within the object
+console.log(this)
+console.log(this === window) // returns true
+// this refers to what object it's inside of
+
+//////////////////////////
 // instantiation
