@@ -17,13 +17,25 @@ function firstRecurringCharacter(input) {
     }
   }
   return undefined
-}
+} // O(n^2)
 
-// const getFirstRecurringCharacter = firstRecurringCharacter([
-//   2, 5, 1, 2, 3, 5, 1, 2, 4,
-// ]);
-const getFirstRecurringCharacter = firstRecurringCharacter([1, 1])
+function firstRecurringCharacter2(input) {
+  let map = {}
+  for (let i = 0; i < input.length; i++) {
+    if (map[input[i]] !== undefined) {
+      return input[i]
+    } else {
+      map[input[i]] = i
+    }
+    console.log(map, 'map')
+  }
+  return undefined
+} // O(n)
+
+const getFirstRecurringCharacter = firstRecurringCharacter([2, 5, 1, 2, 3, 5, 1, 2, 4])
+const getFirstRecurringCharacter2 = firstRecurringCharacter2([2, 5, 1, 2, 3, 5, 1, 2, 4])
 console.log(getFirstRecurringCharacter, 'getFirstRecurringCharacter')
+console.log(getFirstRecurringCharacter2, 'getFirstRecurringCharacter2')
 
 //Bonus... What if we had this:
 // [2,5,5,2,3,5,1,2,4]
