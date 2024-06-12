@@ -34,6 +34,16 @@ class HashTable {
     }
     return undefined
   } // if no collisions, O(1) but if there are collisions, O(n)
+
+  keys() {
+    const keysArray = []
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keysArray.push(this.data[i][0][0])
+      }
+    }
+    return keysArray
+  }
 }
 
 const myHashTable = new HashTable(50)
@@ -42,9 +52,10 @@ const exampleHash = myHashTable._hash('grapes')
 
 const setFunction = myHashTable.set('grapes', 10000)
 const setFunctionApples = myHashTable.set('apples', 54)
+const setFunctionOranges = myHashTable.set('oranges', 2)
 // console.log(setFunctionApples, "setFunction");
 
 const getFunctionGrapes = myHashTable.get('grapes')
-console.log(getFunctionGrapes, 'getFunctionGrapes')
 const getFunctionApples = myHashTable.get('apples')
-console.log(getFunctionApples, 'getFunctionApples')
+const getKeys = myHashTable.keys()
+console.log(getKeys, 'getKeys')
