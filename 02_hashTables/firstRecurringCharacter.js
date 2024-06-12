@@ -26,8 +26,8 @@ function firstRecurringCharacter2(input) {
       return input[i]
     } else {
       map[input[i]] = i
+      console.log(map, 'map')
     }
-    console.log(map, 'map')
   }
   return undefined
 } // O(n)
@@ -40,3 +40,35 @@ console.log(getFirstRecurringCharacter2, 'getFirstRecurringCharacter2')
 //Bonus... What if we had this:
 // [2,5,5,2,3,5,1,2,4]
 // return 5 because the pairs are before 2,2
+
+// function fixedFirstRecurringCharacter(input) {
+//   for (let i = 0; i < input.length; i++) {
+//     for (let j = i + 1; j < input.length; j++) {
+//       if (input[i] === input[j]) {
+//         return input[i];
+//       }
+//     }
+//   }
+//   return undefined;
+// } // O(n^2)
+
+// console.log(
+//   fixedFirstRecurringCharacter([2, 5, 5, 2, 3, 5, 1, 2, 4]),
+//   "fixedFirstRecurringCharacter",
+// );
+
+const map = {}
+map[0] = 'apples'
+map[1] = 'oranges'
+map[2] = 'grapes'
+map[3] = 'bananas'
+map[4] = 'pears'
+
+const arrayObject = Object.values(map)
+console.log(arrayObject, 'arrayObject')
+
+const entries = Object.entries(map)
+console.log(entries, 'entries')
+
+const fromEntries = Object.fromEntries(entries)
+console.log(fromEntries, 'fromEntries')
