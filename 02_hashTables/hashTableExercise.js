@@ -45,6 +45,7 @@ class HashTable {
     return keysArray
   }
 
+  // Includes hash collisions
   keys2() {
     if (!this.data.length) {
       return undefined
@@ -80,4 +81,6 @@ const setFunctionOranges = myHashTable.set('oranges', 2)
 const getFunctionGrapes = myHashTable.get('grapes')
 const getFunctionApples = myHashTable.get('apples')
 const getKeys = myHashTable.keys()
+const getKeys2 = myHashTable.keys2()
 console.log(getKeys, 'getKeys')
+console.log(getKeys2, 'getKeys2')
