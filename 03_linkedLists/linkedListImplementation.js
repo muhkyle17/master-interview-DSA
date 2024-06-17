@@ -31,13 +31,25 @@ class LinkedList {
     this.tail.next = newNode
     this.tail = newNode
     this.length++
-    console.log(this, 'this')
     return this // References what the class is or the class that was instanciated
+  }
+
+  // 1-->10-->5-->16
+  prepend(value) {
+    const newNode = {
+      value: value,
+      next: null,
+    }
+    newNode.next = this.head
+    this.head = newNode
+    this.length++
+    return this
   }
 }
 
 const myLinkedList = new LinkedList(10)
 myLinkedList.append(5)
 myLinkedList.append(16)
-console.log(myLinkedList, 'myLInkedList}')
-console.log(myLinkedList.head.next.next, 'head')
+myLinkedList.prepend(1)
+console.log(myLinkedList, 'myLinkedList')
+console.log(myLinkedList.head.next, 'myLinkedList.head.next')
