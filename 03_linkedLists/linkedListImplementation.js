@@ -32,7 +32,7 @@ class LinkedList {
     this.tail = newNode
     this.length++
     console.log(this, 'this')
-    return this
+    return this // References what the class is or the class that was instanciated
   }
 }
 
