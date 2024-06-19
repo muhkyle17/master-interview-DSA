@@ -67,11 +67,6 @@ class LinkedList {
       return this.append(value)
     }
 
-    // if (index === 0) {
-    //   this.prepend(value);
-    //   return this.printList();
-    // }
-
     const newNode = {
       value: value,
       next: null,
