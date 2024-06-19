@@ -102,8 +102,11 @@ class LinkedList {
     }
 
     const leader = this.traverseToIndex(index - 1)
+    console.log(leader, 'leader')
     const unwantedNode = leader.next
+    console.log(unwantedNode, 'unwantedNode')
     leader.next = unwantedNode.next
+    console.log(leader, 'leader')
     this.length--
     return this.printList()
   }
