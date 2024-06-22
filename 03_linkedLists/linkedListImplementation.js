@@ -121,15 +121,33 @@ class LinkedList {
     console.log(second, 'second')
     while (second) {
       const temp = second.next
-      console.log(temp, 'temp')
       second.next = first
       first = second
       second = temp
     }
     this.head.next = null
     this.head = first
-    console.log(this, 'this')
-    // return this.printList();
+    // // return this.printList();
+    return this
+  }
+
+  // https://www.youtube.com/watch?v=O0By4Zq0OFc -- A better explanation and solution for this
+  reverse2() {
+    if (!this.head.next) {
+      return this.head
+    }
+
+    let prev = null
+    let curr = this.head
+    let next = null
+
+    while (curr != null) {
+      next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+    }
+    this.head = prev
     return this
   }
 }
@@ -141,5 +159,6 @@ myLinkedList.prepend(1)
 myLinkedList.insert(2, 99)
 myLinkedList.insert(20, 88)
 myLinkedList.remove(1)
-myLinkedList.reverse()
+// myLinkedList.reverse();
+myLinkedList.reverse2()
 console.log(myLinkedList.printList(), 'printlist function')
