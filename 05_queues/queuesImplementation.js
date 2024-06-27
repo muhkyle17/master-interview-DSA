@@ -11,12 +11,22 @@ class Queue {
   constructor() {
     this.first = null
     this.late = null
-    this.lenght = 0
+    this.length = 0
   }
 
-  peek() {}
+  peek() {
+    return this.top
+  }
 
   enqueue(value) {}
 
   dequeue() {}
 }
+
+const myQueue = new Queue()
+console.log(myQueue.peek(), 'peek')
+
+// Joy
+// Matt
+// Pavel
+// Samir
