@@ -18,3 +18,5 @@ class Stack {
 
   pop() {}
 }
+
+const myStack = new Stack()
