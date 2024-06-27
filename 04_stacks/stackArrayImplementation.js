@@ -7,47 +7,20 @@ class Node {
 
 class Stack {
   constructor() {
-    this.top = null
-    this.bottom = null
-    this.length = 0
+    this.array = []
   }
 
   peek() {
-    return this.top
+    return this.array[this.array.length - 1]
   }
 
   push(value) {
-    const newNode = new Node(value)
-    if (this.length === 0) {
-      this.top = newNode
-      this.bottom = newNode
-    } else {
-      const holdingPointer = this.top
-      this.top = newNode
-      this.top.next = holdingPointer
-    }
-    this.length++
-
+    this.array.push(value)
     return this
   }
 
   pop() {
-    if (!this.top) {
-      return null
-    }
-    // if (this.length === 1) {
-    //   this.bottom = null;
-    // }
-
-    // OR
-
-    if (this.top === this.bottom) {
-      this.bottom = null
-    }
-
-    const holdingPointer = this.top
-    this.top = this.top.next
-    this.length--
+    this.array.pop()
     return this
   }
 }
@@ -58,7 +31,8 @@ const google = myStack.push('google')
 const udemy = myStack.push('udemy')
 // console.log(udemy, "udemy");
 const discord = myStack.push('discord')
-// console.log(discord, "discord");
+console.log(discord, 'discord')
+console.log(myStack.peek(), 'peek for the last item in the array')
 // console.log(myStack.peek(), "peek");
 console.log(myStack.pop(), 'pop')
 console.log(myStack.pop())
