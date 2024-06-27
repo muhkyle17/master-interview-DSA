@@ -31,7 +31,25 @@ class Stack {
     return this
   }
 
-  pop() {}
+  pop() {
+    if (!this.top) {
+      return null
+    }
+    // if (this.length === 1) {
+    //   this.bottom = null;
+    // }
+
+    // OR
+
+    if (this.top === this.bottom) {
+      this.bottom = null
+    }
+
+    const holdingPointer = this.top
+    this.top = this.top.next
+    this.length--
+    return this
+  }
 }
 
 const myStack = new Stack()
@@ -40,5 +58,8 @@ const google = myStack.push('google')
 const udemy = myStack.push('udemy')
 // console.log(udemy, "udemy");
 const discord = myStack.push('discord')
-console.log(discord, 'discord')
-console.log(myStack.peek(), 'peek')
+// console.log(discord, "discord");
+// console.log(myStack.peek(), "peek");
+console.log(myStack.pop(), 'pop')
+console.log(myStack.pop())
+console.log(myStack.pop())
