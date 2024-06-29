@@ -1,3 +1,5 @@
+// queues implementation
+
 class Node {
   constructor(value) {
     this.value = value
@@ -5,10 +7,10 @@ class Node {
   }
 }
 
-class Stack {
+class Queue {
   constructor() {
-    this.top = null
-    this.bottom = null
+    this.first = null
+    this.last = null
     this.length = 0
   }
 
@@ -16,50 +18,50 @@ class Stack {
     return this.top
   }
 
-  push(value) {
+  enqueue(value) {
     const newNode = new Node(value)
     if (this.length === 0) {
-      this.top = newNode
-      this.bottom = newNode
+      this.first = newNode
+      this.last = newNode
     } else {
-      const holdingPointer = this.top
-      this.top = newNode
-      this.top.next = holdingPointer
+      this.last.next = newNode
+      this.last = newNode
+
+      // On enqueue with length of 0, this.first and this.last are assigned the same object. They are now linked by reference.
+      // On enqueue with length of 1, they are pointing to the same object that's why when this.last.next = newNode is performed, it also changes this.first.next by reference. On the line this.last = newNode, this overwrites the previous assignment for this.last and thus breaks the link.
     }
     this.length++
-
     return this
   }
 
-  pop() {
-    if (!this.top) {
+  dequeue() {
+    if (!this.first) {
       return null
     }
-    // if (this.length === 1) {
-    //   this.bottom = null;
-    // }
 
-    // OR
-
-    if (this.top === this.bottom) {
-      this.bottom = null
+    if (this.first === this.last) {
+      this.last = null
     }
-
-    const holdingPointer = this.top
-    this.top = this.top.next
+    const holdingPointer = this.first
+    this.first = this.first.next
     this.length--
+    // return holdingPointer;
     return this
   }
 }
 
-const myStack = new Stack()
-const google = myStack.push('google')
-// console.log(google, "google");
-const udemy = myStack.push('udemy')
-// console.log(udemy, "udemy");
-const discord = myStack.push('discord')
-// console.log(discord, "discord");
-// console.log(myStack.peek(), "peek");
-console.log(myStack.pop(), 'pop')
-console.log(myStack.pop())
-console.log(myStack.pop())
+const myQueue = new Queue()
+const queueJoy = myQueue.enqueue('Joy')
+const queueMatt = myQueue.enqueue('Matt')
+const queuePavel = myQueue.enqueue('Pavel')
+const queueSamir = myQueue.enqueue('Samir')
+// console.log(queueSamir, "queueSamir");
+const deQueue1 = myQueue.dequeue()
+const deQueue2 = myQueue.dequeue()
+const deQueue3 = myQueue.dequeue()
+console.log(deQueue3, 'deQueue3')
+
+// Joy
+// Matt
+// Pavel
+// Samir
