@@ -28,7 +28,7 @@ class Queue {
       this.last = newNode
 
       // On enqueue with length of 0, this.first and this.last are assigned the same object. They are now linked by reference.
-      // On enqueue with length of 1, they are pointing to the same object until this.last = newNode. This line overwrites the previous assignment for this.last and thus breaks the link.
+      // On enqueue with length of 1, they are pointing to the same object that's why when this.last.next = newNode is performed, it also changes this.first.next by reference. On the line this.last = newNode, this overwrites the previous assignment for this.last and thus breaks the link.
     }
     this.length++
     return this
