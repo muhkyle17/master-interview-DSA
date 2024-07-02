@@ -236,3 +236,14 @@ function createArray(n) {
 ```
 
 In this example, the space complexity is O(n)O(n)O(n) because the size of the array grows linearly with the input size.
+
+### Comparison and Importance
+
+- **Time Complexity:**
+  - Focuses on how fast an algorithm runs.
+  - Critical for applications where speed is a primary concern (e.g., real-time systems, high-frequency trading).
+- **Space Complexity:**
+  - Focuses on how much memory an algorithm uses.
+  - Important for applications where memory is limited (e.g., embedded systems, large-scale data processing).
+
+In practice, there is often a trade-off between time and space complexity. For example, an algorithm that runs faster may use more memory, and vice versa. Balancing these trade-offs is a key aspect of algorithm design and optimization.
