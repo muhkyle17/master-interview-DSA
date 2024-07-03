@@ -41,7 +41,38 @@ class BinarySearchTree {
     }
   }
 
-  lookup(value) {}
+  lookup(value) {
+    if (!this.root) {
+      return false
+    }
+
+    let currentNode = this.root
+    if (value === currentNode.value) {
+      return this.root.value
+    }
+    // console.log(value, "value");
+    // console.log(currentNode, "currentNode");
+
+    while (true) {
+      if (value < currentNode.value) {
+        // Go left
+        if (currentNode.left.value === value) {
+          console.log(currentNode, 'currentNode')
+          return currentNode.left
+        }
+        // Keep going left
+        currentNode = currentNode.left
+      } else {
+        // Go right
+        if (currentNode.right.value === value) {
+          return currentNode.right
+        }
+
+        // Keep going right
+        currentNode = currentNode.right
+      }
+    }
+  }
 }
 
 const tree = new BinarySearchTree()
@@ -53,7 +84,9 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-console.log(JSON.stringify(traverse(tree.root)), 'tree')
+const lookup = tree.lookup(4)
+console.log(lookup, 'lookup')
+// console.log(JSON.stringify(traverse(tree.root)), "tree");
 
 //      9
 //   4     20
