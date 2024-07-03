@@ -53,20 +53,17 @@ class BinarySearchTree {
 
     while (currentNode) {
       if (value < currentNode.value) {
-        // Go left
+        currentNode = currentNode.left
+
         if (currentNode.left.value === value) {
           return currentNode.left
         }
-        // Keep going left
-        currentNode = currentNode.left
       } else {
-        // Go right
+        currentNode = currentNode.right
+
         if (currentNode.right.value === value) {
           return currentNode.right
         }
-
-        // Keep going right
-        currentNode = currentNode.right
       }
 
       return null
@@ -101,11 +98,11 @@ tree.insert(170)
 tree.insert(15)
 tree.insert(1)
 
-// Getting to the last line doesn't work so 1, 6, 15, and 170 isn't found
-const lookupInitialSolution = tree.lookupInitialSolution(2)
+// Was able to find 1 and 170 but can't find 6 and 15
+const lookupInitialSolution = tree.lookupInitialSolution(1)
 console.log(lookupInitialSolution, 'lookupInitialSolution')
 
-const lookup = tree.lookup(100)
+const lookup = tree.lookup(170)
 console.log(lookup, 'lookup')
 // console.log(JSON.stringify(traverse(tree.root)), "tree");
 
