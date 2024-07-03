@@ -101,6 +101,7 @@ tree.insert(170)
 tree.insert(15)
 tree.insert(1)
 
+// Getting to the last line doesn't work so 1, 6, 15, and 170 isn't found
 const lookupInitialSolution = tree.lookupInitialSolution(2)
 console.log(lookupInitialSolution, 'lookupInitialSolution')
 
