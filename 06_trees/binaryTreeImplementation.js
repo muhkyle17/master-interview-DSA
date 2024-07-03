@@ -176,6 +176,7 @@ tree.insert(15)
 tree.insert(1)
 tree.remove(170)
 
+// Was able to find 1 and 170 but can't find 6 and 15
 const lookupInitialSolution = tree.lookupInitialSolution(1)
 console.log(lookupInitialSolution, 'lookupInitialSolution')
 
