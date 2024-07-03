@@ -11,7 +11,35 @@ class BinarySearchTree {
     this.root = null
   }
 
-  insert(value) {}
+  insert(value) {
+    const newNode = new Node(value)
+    if (this.root === null) {
+      this.root = newNode
+    } else {
+      let currentNode = this.root
+
+      // Keep looping until the left of the value is null
+      while (true) {
+        if (value < currentNode.value) {
+          // Go left
+          if (!currentNode.left) {
+            currentNode.left = newNode
+            return this
+          }
+          // Continue left
+          currentNode = currentNode.left
+        } else {
+          // Go right
+          if (!currentNode.right) {
+            currentNode.right = newNode
+            return this
+          }
+          // Continue right
+          currentNode = currentNode.right
+        }
+      }
+    }
+  }
 
   lookup(value) {}
 }
@@ -25,7 +53,7 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-JSON.stringify(traverse(tree.root))
+console.log(JSON.stringify(traverse(tree.root)), 'tree')
 
 //      9
 //   4     20
